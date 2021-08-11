@@ -5,7 +5,7 @@ alias phpunitw="phpunit-watcher watch"
 alias art="php artisan"
 
 alias c="composer"
-alias comp="composer"
+alias com="composer"
 alias cu="composer update"
 alias cr="composer require"
 alias ci="composer install"
