@@ -146,6 +146,10 @@ echo 'Install iTerm2'
 echo '--------------'
 brew install --cask iterm2
 
+echo 'Install Tunnelblick'
+echo '-------------------'
+brew install --cask tunnelblick
+
 echo 'Install vs code'
 echo '---------------'
 brew install --cask visual-studio-code
@@ -177,6 +181,8 @@ brew install --cask google-chrome
 echo 'Install Firefox'
 echo '---------------'
 brew install --cask firefox
+
+
 
 echo '++++++++++++++++++++++++++++++'
 echo '++++++++++++++++++++++++++++++'
