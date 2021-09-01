@@ -5,7 +5,7 @@ My personal dotfiles. It contains the installation of some basic tools, some han
 You can install them by cloning the repository as `.dotfiles` in your `home` directory and running the bootstrap script.
 
 ```
-git clone git@github.com:bobmulder/dotfiles.git .dotfiles
+git clone https://github.com/bobmulder/dotfiles.git .dotfiles
 cd .dotfiles
 ./bootstrap
 ```
