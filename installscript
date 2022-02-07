@@ -18,38 +18,6 @@ ln -s $HOME/.dotfiles/shell/.zshrc $HOME/.zshrc
 cd ~/.dotfiles/shell
 chmod +x z.sh
 
-# Configure npm
-echo 'Configure npm'
-echo '-------------'
-
-# Create a directory for global packages and tell npm where to store globally installed packages
-mkdir "${HOME}/.npm-packages"
-npm config set prefix "${HOME}/.npm-packages"
-
-# Install composer
-echo 'Install composer'
-echo '----------------'
-
-EXPECTED_COMPOSER_CHECKSUM="$(curl https://composer.github.io/installer.sig)"
-php -r "copy('https://getcomposer.org/installer', 'composer-setup.php');"
-ACTUAL_COMPOSER_CHECKSUM="$(php -r "echo hash_file('sha384', 'composer-setup.php');")"
-if [ "$EXPECTED_COMPOSER_CHECKSUM" != "$ACTUAL_COMPOSER_CHECKSUM" ]
-then
-    >&2 echo 'ERROR: Invalid installer checksum'
-    rm composer-setup.php
-    exit 1
-fi
-php composer-setup.php
-rm composer-setup.php
-mv composer.phar /usr/local/bin/composer
-
-# Install PHP CS Fixer
-echo 'Install PHP CS Fixer'
-echo '--------------------'
-curl -L https://cs.symfony.com/download/php-cs-fixer-v3.phar -o php-cs-fixer
-chmod a+x php-cs-fixer
-mv php-cs-fixer /usr/local/bin/php-cs-fixer
-
 # Install homebrew
 echo 'Install homebrew'
 echo '----------------'
@@ -189,6 +157,38 @@ echo 'Install Firefox'
 echo '---------------'
 brew install --cask firefox
 
+
+# Configure npm
+echo 'Configure npm'
+echo '-------------'
+
+# Create a directory for global packages and tell npm where to store globally installed packages
+mkdir "${HOME}/.npm-packages"
+npm config set prefix "${HOME}/.npm-packages"
+
+# Install composer
+echo 'Install composer'
+echo '----------------'
+
+EXPECTED_COMPOSER_CHECKSUM="$(curl https://composer.github.io/installer.sig)"
+php -r "copy('https://getcomposer.org/installer', 'composer-setup.php');"
+ACTUAL_COMPOSER_CHECKSUM="$(php -r "echo hash_file('sha384', 'composer-setup.php');")"
+if [ "$EXPECTED_COMPOSER_CHECKSUM" != "$ACTUAL_COMPOSER_CHECKSUM" ]
+then
+    >&2 echo 'ERROR: Invalid installer checksum'
+    rm composer-setup.php
+    exit 1
+fi
+php composer-setup.php
+rm composer-setup.php
+mv composer.phar /usr/local/bin/composer
+
+# Install PHP CS Fixer
+echo 'Install PHP CS Fixer'
+echo '--------------------'
+curl -L https://cs.symfony.com/download/php-cs-fixer-v3.phar -o php-cs-fixer
+chmod a+x php-cs-fixer
+mv php-cs-fixer /usr/local/bin/php-cs-fixer
 
 
 echo '++++++++++++++++++++++++++++++'
