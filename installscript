@@ -1,5 +1,7 @@
 #!/bin/bash
 
+BIN="/opt/homebrew/bin" # or /usr/local/bin
+
 # Hide "last login" line when starting a new terminal session
 touch $HOME/.hushlogin
 
@@ -188,14 +190,14 @@ then
 fi
 php composer-setup.php
 rm composer-setup.php
-mv composer.phar /usr/local/bin/composer
+mv composer.phar $BIN/composer
 
 # Install PHP CS Fixer
 echo 'Install PHP CS Fixer'
 echo '--------------------'
 curl -L https://cs.symfony.com/download/php-cs-fixer-v3.phar -o php-cs-fixer
 chmod a+x php-cs-fixer
-mv php-cs-fixer /usr/local/bin/php-cs-fixer
+mv php-cs-fixer $BIN/php-cs-fixer
 
 
 echo '++++++++++++++++++++++++++++++'
