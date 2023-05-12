@@ -158,6 +158,10 @@ echo 'Install Firefox'
 echo '---------------'
 brew install --cask firefox
 
+echo 'Install Cyberduck'
+echo '-----------------'
+brew install --cask cyberduck
+
 
 # Configure npm
 echo 'Configure npm'
