@@ -74,9 +74,9 @@ brew cask install --force qlcolorcode qlstephen qlmarkdown quicklook-json qlpret
 # Install PHP
 echo 'Install php'
 echo '-----------'
-brew install php@7.4
-brew install php@8.0
-brew install php@8.1
+brew tap shivammathur/php
+brew install shivammathur/php/php@8.1
+brew link --overwrite --force php@8.1
 
 echo 'Install imagemagick'
 echo '-------------------'
