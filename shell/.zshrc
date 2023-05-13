@@ -18,7 +18,7 @@ ZSH_THEME="agnoster"
 plugins=(
   git 
   composer 
-  osx 
+  macos 
 )
 
 source $ZSH/oh-my-zsh.sh
@@ -61,7 +61,7 @@ ssh-add -A 2>/dev/null;
 export XDEBUG_CONFIG="idekey=VSCODE"
 
 # Enable autosuggestions
-source /usr/local/share/zsh-autosuggestions/zsh-autosuggestions.zsh
+source /opt/homebrew/share/zsh-autosuggestions/zsh-autosuggestions.zsh
 
 # Extra paths
 export PATH="$HOME/.composer/vendor/bin:$PATH"
