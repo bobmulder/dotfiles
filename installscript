@@ -32,7 +32,7 @@ eval "$(/opt/homebrew/bin/brew shellenv)"
 # Install node
 echo 'Install node'
 echo '------------'
-brew install node@8
+brew install node
 
 # Install multiple tools
 
